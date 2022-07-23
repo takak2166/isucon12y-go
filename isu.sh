@@ -55,6 +55,8 @@ if [ ${COMMAND} = "prebench" ]; then
     cd ${BUILDDIR}
     # go build -o ${APP_NAME}
     sudo systemctl restart ${SERVICE_NAME}
+    sudo systemctl restart nginx
+    sudo systemctl restart mysql
 fi
 
 function alp_to_slack() {
