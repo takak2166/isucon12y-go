@@ -37,9 +37,9 @@ if [ ${COMMAND} = "setup" ]; then
     sudo cp ${NGX_CONF} ${NGX_CONF}.initial
     sudo mv ${NGX_CONF} ${CONFDIR}
     sudo ln -s ${CONFDIR}/nginx.conf ${NGX_CONF}
-    sudo cp ${MYSQLD_CNF} ${MYSQLD_CNF}.initital
-    sudo mv ${MYSQLD_CNF} ${CONFDIR}
-    sudo ln ${CONFDIR}/mysqld.cnf ${MYSQLD_CNF}
+    # sudo cp ${MYSQLD_CNF} ${MYSQLD_CNF}.initital
+    # sudo mv ${MYSQLD_CNF} ${CONFDIR}
+    # sudo ln ${CONFDIR}/mysqld.cnf ${MYSQLD_CNF}
 fi
 
 if [ ${COMMAND} = "prebench" ]; then
@@ -56,7 +56,7 @@ if [ ${COMMAND} = "prebench" ]; then
     # go build -o ${APP_NAME}
     sudo systemctl restart ${SERVICE_NAME}
     sudo systemctl restart nginx
-    sudo systemctl restart mysql
+    # sudo systemctl restart mysql
 fi
 
 function alp_to_slack() {
@@ -69,7 +69,7 @@ function query_to_slack() {
 
 if [ ${COMMAND} = "postbench" ]; then
     alp_to_slack
-    query_to_slack
+    # query_to_slack
 fi
 
 if [ ${COMMAND} = "alp" ]; then
