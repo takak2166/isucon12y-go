@@ -53,7 +53,7 @@ if [ ${COMMAND} = "prebench" ]; then
         sudo mv ${MYSQL_LOG} ./logs/${TIME}/
     fi
     cd ${BUILDDIR}
-    go build -o ${APP_NAME}
+    # go build -o ${APP_NAME}
     sudo systemctl restart ${SERVICE_NAME}
 fi
 
